@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.2.1","implementation":{"name":"cucumber-jvm","version":"6.9.1"},"runtime":{"name":"OpenJDK 64-Bit Server VM","version":"22+36-2370"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1716104375","nanos":477308100}}},{"source":{"uri":"file:///D:/Systems/Systems/src/test/resources/features/Systems.feature","data":"Feature: Spice Jet\r\n  Scenario: As a User I want to Book a flight and make sure that\u0027s booked\r\n    Given User is redirect to the Home Page\r\n    Then  Choose round Trip\r\n    When  Choose the country\r\n    And   set the Date\r\n    And   Set the number of passengers\r\n    When  Choose the currency\r\n    Then  Click on Search Flight Button\r\n    Then Verify that the Flight isn\u0027t displayed\r\n\r\n\r\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///D:/Systems/Systems/src/test/resources/features/Systems.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Spice Jet","children":[{"scenario":{"location":{"line":2,"column":3},"keyword":"Scenario","name":"As a User I want to Book a flight and make sure that\u0027s booked","steps":[{"location":{"line":3,"column":5},"keyword":"Given ","text":"User is redirect to the Home Page","id":"c868310b-7bd1-4abc-909b-3696e53568fb"},{"location":{"line":4,"column":5},"keyword":"Then ","text":"Choose round Trip","id":"fab235a1-86cd-4789-a7ca-832f9f94e34f"},{"location":{"line":5,"column":5},"keyword":"When ","text":"Choose the country","id":"b3104ef7-4386-469a-8a9d-9b5a36b786a7"},{"location":{"line":6,"column":5},"keyword":"And ","text":"set the Date","id":"3e15e634-d231-4602-94fb-2c09edd69561"},{"location":{"line":7,"column":5},"keyword":"And ","text":"Set the number of passengers","id":"f73ded30-60c3-4c6e-940c-d0a890172771"},{"location":{"line":8,"column":5},"keyword":"When ","text":"Choose the currency","id":"de2c0364-8633-4a76-bb24-f0b44ba4e7ee"},{"location":{"line":9,"column":5},"keyword":"Then ","text":"Click on Search Flight Button","id":"bacf17ed-73b5-475c-afd5-7b6f9b5e585f"},{"location":{"line":10,"column":5},"keyword":"Then ","text":"Verify that the Flight isn\u0027t displayed","id":"3a2e0459-1f76-4bf0-ab92-0d2b45f6f008"}],"id":"4a69251d-9212-42d3-81f2-2ef0db784745"}}]}}},{"pickle":{"id":"e88dbacb-1268-4af9-9398-89696f326fa6","uri":"file:///D:/Systems/Systems/src/test/resources/features/Systems.feature","name":"As a User I want to Book a flight and make sure that\u0027s booked","language":"en","steps":[{"text":"User is redirect to the Home Page","id":"2f0139fc-dc43-409f-a3e4-6ae17b7ac7ff","astNodeIds":["c868310b-7bd1-4abc-909b-3696e53568fb"]},{"text":"Choose round Trip","id":"9d7fda3d-feed-4905-b17c-6d5d2ca4b9da","astNodeIds":["fab235a1-86cd-4789-a7ca-832f9f94e34f"]},{"text":"Choose the country","id":"ff6d1cca-685c-4f9f-a5ca-f879c1617a03","astNodeIds":["b3104ef7-4386-469a-8a9d-9b5a36b786a7"]},{"text":"set the Date","id":"63747a6c-4472-4020-915d-4ce6fd90824e","astNodeIds":["3e15e634-d231-4602-94fb-2c09edd69561"]},{"text":"Set the number of passengers","id":"dc3557c6-59c9-489d-82e5-f7981052bb02","astNodeIds":["f73ded30-60c3-4c6e-940c-d0a890172771"]},{"text":"Choose the currency","id":"903ae628-13f7-4854-8148-f916e97249b0","astNodeIds":["de2c0364-8633-4a76-bb24-f0b44ba4e7ee"]},{"text":"Click on Search Flight Button","id":"34ce7e5f-bbca-4e10-acdb-d15d1bbddb4e","astNodeIds":["bacf17ed-73b5-475c-afd5-7b6f9b5e585f"]},{"text":"Verify that the Flight isn\u0027t displayed","id":"005c6dd6-6427-4fb4-8435-5ea41bf40f87","astNodeIds":["3a2e0459-1f76-4bf0-ab92-0d2b45f6f008"]}],"astNodeIds":["4a69251d-9212-42d3-81f2-2ef0db784745"]}},{"testCase":{"id":"5020d1eb-31e5-4532-9f06-521a8f0d183c","pickleId":"e88dbacb-1268-4af9-9398-89696f326fa6","testSteps":[{"id":"029c7fad-d8c4-4713-83ca-c8a279c93c82","hookId":"d373a347-ddb5-448d-b31d-643afc25fdcf"},{"id":"80e1af1e-e885-405e-aa64-68f88f592301","pickleStepId":"2f0139fc-dc43-409f-a3e4-6ae17b7ac7ff","stepDefinitionIds":["6801c6dc-6baf-4761-b209-aaf29df98580"],"stepMatchArgumentsLists":[{}]},{"id":"9fffc708-21c6-479d-b045-82822ee0290c","pickleStepId":"9d7fda3d-feed-4905-b17c-6d5d2ca4b9da","stepDefinitionIds":["607dae31-3e07-4d69-ab7a-3ba539430993"],"stepMatchArgumentsLists":[{}]},{"id":"45a83eff-e2e1-454a-8f63-81f927229eee","pickleStepId":"ff6d1cca-685c-4f9f-a5ca-f879c1617a03","stepDefinitionIds":["296568c7-8be7-4d73-8e93-458afd1aa7ce"],"stepMatchArgumentsLists":[{}]},{"id":"d9301104-bb2b-45e4-a01b-756bf599850d","pickleStepId":"63747a6c-4472-4020-915d-4ce6fd90824e","stepDefinitionIds":["afa81666-0a32-4426-95b9-bf4dc8de0d55"],"stepMatchArgumentsLists":[{}]},{"id":"753d103f-62c3-4c03-bdd7-359c95db7f4f","pickleStepId":"dc3557c6-59c9-489d-82e5-f7981052bb02","stepDefinitionIds":["d666cff7-d665-4599-83e9-f12a86925094"],"stepMatchArgumentsLists":[{}]},{"id":"1f85b064-97d4-454d-be85-f445d081ba13","pickleStepId":"903ae628-13f7-4854-8148-f916e97249b0","stepDefinitionIds":["3005f8b3-f034-4444-9f6d-6125e9a4d748"],"stepMatchArgumentsLists":[{}]},{"id":"0f48f41d-ee36-48f8-8ba8-87627dc560ba","pickleStepId":"34ce7e5f-bbca-4e10-acdb-d15d1bbddb4e","stepDefinitionIds":["ca9f92ce-06a7-4170-a336-621c40b959d6"],"stepMatchArgumentsLists":[{}]},{"id":"e6dfa4b7-e620-449e-a403-08bfe84b1cee","pickleStepId":"005c6dd6-6427-4fb4-8435-5ea41bf40f87","stepDefinitionIds":["9d33f6fd-9d41-44db-bef6-3bde45cb8184"],"stepMatchArgumentsLists":[{}]},{"id":"eade979e-3709-42b8-bd48-c8390d9cbc47","hookId":"9283ec68-5e61-4ffd-8e21-180e5b88eb18"}]}},{"testCaseStarted":{"timestamp":{"seconds":"1716104376","nanos":31983100},"testCaseId":"5020d1eb-31e5-4532-9f06-521a8f0d183c","id":"989d6a06-86bf-4a00-841e-85e7782294ff"}},{"testStepStarted":{"timestamp":{"seconds":"1716104376","nanos":47940100},"testStepId":"029c7fad-d8c4-4713-83ca-c8a279c93c82","testCaseStartedId":"989d6a06-86bf-4a00-841e-85e7782294ff"}},
